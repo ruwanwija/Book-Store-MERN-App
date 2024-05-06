@@ -8,9 +8,9 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON
 
 app.use(cors({
-    origin:[""]
-    methods:["POST", "GET", "UPDATE", "DELETE"],
-    credentials:true
+    origin: true, // Allows all origins
+    methods: ["POST", "GET", "PUT", "DELETE"], // Corrected methods list
+    credentials: true // Allows cookies and other credentials
 }));
 
 app.get('/', (request, response) => {
