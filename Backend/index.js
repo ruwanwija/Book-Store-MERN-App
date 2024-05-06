@@ -7,7 +7,11 @@ import cors from 'cors';
 const app = express();
 app.use(express.json()); // Middleware to parse JSON
 
-app.use(cors());
+app.use(cors({
+    origin:[""]
+    methods:["POST", "GET", "UPDATE", "DELETE"],
+    credentials:true
+}));
 
 app.get('/', (request, response) => {
     console.log(request);
